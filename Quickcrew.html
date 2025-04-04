@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickCrew - Professional Staff on Demand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .header img {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+        }
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        /* Sections */
+        .section {
+            background: #fff;
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+        input:focus, select:focus, textarea:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .emergency-btn {
+            background-color: #e74c3c;
+        }
+        .emergency-btn:hover {
+            background-color: #c0392b;
+        }
+        .secondary-btn {
+            background-color: #f39c12;
+        }
+        .secondary-btn:hover {
+            background-color: #e67e22;
+        }
+        .display-box {
+            margin-top: 25px;
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            background: #f9fbfc;
+            display: none;
+        }
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+            columns: 2;
+        }
+        .feature-list li {
+            padding: 10px 0;
+            color: #7f8c8d;
+        }
+        /* Footer */
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1.2em;
+        }
+        .footer a:hover {
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="hh.jpg" alt="QuickCrew Logo">
+        <h1>QuickCrew</h1>
+        <p>Professional Staff on Demand - Hire or Work with Ease</p>
+    </div>
+
+    <div class="container">
+        <!-- Company Section -->
+        <div class="section" id="company-section">
+            <h2>For Companies</h2>
+            <form id="company-form">
+                <div class="form-group">
+                    <label for="company-name">Company Name:</label>
+                    <input type="text" id="company-name" name="company-name" placeholder="e.g., ABC Pvt Ltd" required>
+                </div>
+                <div class="form-group">
+                    <label for="company-email">Email:</label>
+                    <input type="email" id="company-email" name="company-email" placeholder="e.g., info@abc.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="company-phone">Phone Number:</label>
+                    <input type="tel" id="company-phone" name="company-phone" placeholder="e.g., 9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label for="staff-type">Staff Required:</label>
+                    <select id="staff-type" name="staff-type" required>
+                        <option value="">Select Staff Type</option>
+                        <option value="Cleaner">Cleaner</option>
+                        <option value="Nurse">Nurse</option>
+                        <option value="Counter Staff">Counter Staff</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Security Guard">Security Guard</option>
+                        <option value="Delivery Boy">Delivery Boy</option>
+                        <option value="Chef">Chef</option>
+                        <option value="Receptionist">Receptionist</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="staff-count">Number of Staff:</label>
+                    <input type="number" id="staff-count" name="staff-count" min="1" placeholder="e.g., 2" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Job Location:</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Delhi" required>
+                </div>
+                <div class="form-group">
+                    <label for="duration">Duration (Days):</label>
+                    <input type="number" id="duration" name="duration" min="1" placeholder="e.g., 30" required>
+                </div>
+                <div class="form-group">
+                    <label for="salary">Daily Salary Offered (₹):</label>
+                    <input type="number" id="salary" name="salary" min="100" placeholder="e.g., 500" required>
+                </div>
+                <div class="form-group">
+                    <label for="shift">Shift Type:</label>
+                    <select id="shift" name="shift" required>
+                        <option value="">Select Shift</option>
+                        <option value="Day">Day (8 AM - 5 PM)</option>
+                        <option value="Night">Night (8 PM - 5 AM)</option>
+                        <option value="Flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="job-desc">Job Description:</label>
+                    <textarea id="job-desc" name="job-desc" rows="4" placeholder="Describe the job role..." required></textarea>
+                </div>
+                <button type="submit">Book Staff</button>
+                <button type="button" class="emergency-btn" onclick="alert('Emergency staff request sent!')">Emergency Staff</button>
+                <button type="button" class="secondary-btn" onclick="alert('Job posted to premium staff!')">Post to Premium Staff</button>
+            </form>
+            <div id="company-display" class="display-box">
+                <h3>Booked Staff Details:</h3>
+                <p><strong>Company:</strong> <span id="display-company"></span></p>
+                <p><strong>Staff Type:</strong> <span id="display-staff-type"></span></p>
+                <p><strong>Number:</strong> <span id="display-staff-count"></span></p>
+                <p><strong>Location:</strong> <span id="display-location"></span></p>
+                <p><strong>Duration:</strong> <span id="display-duration"></span> days</p>
+                <p><strong>Salary:</strong> ₹<span id="display-salary"></span>/day</p>
+                <p><strong>Shift:</strong> <span id="display-shift"></span></p>
+                <p><strong>Description:</strong> <span id="display-desc"></span></p>
+                <button onclick="replaceStaff()">Replace Staff</button>
+            </div>
+            <ul class="feature-list">
+                <li>Fast Booking System</li>
+                <li>Auto Replace Option</li>
+                <li>Salary & Attendance Tracking</li>
+                <li>Rating System</li>
+                <li>Chat Support</li>
+                <li>Emergency Help</li>
+                <li>Location-Based Staff Search</li>
+                <li>Custom Shift & Duration</li>
+                <li>Premium Staff Option</li>
+            </ul>
+        </div>
+
+        <!-- Staff/Job Seeker Section -->
+        <div class="section" id="staff-section">
+            <h2>For Job Seekers</h2>
+            <form id="staff-form">
+                <div class="form-group">
+                    <label for="staff-name">Your Name:</label>
+                    <input type="text" id="staff-name" name="staff-name" placeholder="e.g., Rahul Sharma" required>
+                </div>
+                <div class="form-group">
+                    <label for="staff-email">Email:</label>
+                    <input type="email" id="staff-email" name="staff-email" placeholder="e.g., rahul@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="staff-mobile">Mobile Number:</label>
+                    <input type="tel" id="staff-mobile" name="staff-mobile" placeholder="e.g., 9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label for="staff-location">Your Location:</label>
+                    <input type="text" id="staff-location" name="staff-location" placeholder="e.g., Mumbai" required>
+                </div>
+                <div class="form-group">
+                    <label for="skill">Your Skill:</label>
+                    <select id="skill" name="skill" required>
+                        <option value="">Select Skill</option>
+                        <option value="Cleaning">Cleaning</option>
+                        <option value="Nursing">Nursing</option>
+                        <option value="Customer Service">Customer Service</option>
+                        <option value="Mechanic">Mechanic</option>
+                        <option value="Security">Security</option>
+                        <option value="Delivery">Delivery</option>
+                        <option value="Cooking">Cooking</option>
+                        <option value="Reception">Reception</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Years of Experience:</label>
+                    <input type="number" id="experience" name="experience" min="0" placeholder="e.g., 2" required>
+                </div>
+                <div class="form-group">
+                    <label for="availability">Availability:</label>
+                    <select id="availability" name="availability" required>
+                        <option value="">Select Availability</option>
+                        <option value="Full-Time">Full-Time</option>
+                        <option value="Part-Time">Part-Time</option>
+                        <option value="Flexible">Flexible</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="documents">Upload Documents (Aadhar, Photo, Resume):</label>
+                    <input type="file" id="documents" name="documents" multiple required>
+                </div>
+                <div class="form-group">
+                    <label for="security-fee">Security Fee (₹):</label>
+                    <input type="number" id="security-fee" name="security-fee" min="100" placeholder="e.g., 500" required>
+                </div>
+                <button type="submit">Register & Start Training</button>
+                <button type="button" class="secondary-btn" onclick="alert('Leave request sent!')">Request Leave</button>
+            </form>
+            <div id="staff-display" class="display-box">
+                <h3>Your Profile:</h3>
+                <p><strong>Name:</strong> <span id="display-staff-name"></span></p>
+                <p><strong>Skill:</strong> <span id="display-skill"></span></p>
+                <p><strong>Experience:</strong> <span id="display-experience"></span> years</p>
+                <p><strong>Location:</strong> <span id="display-staff-location"></span></p>
+                <p><strong>Availability:</strong> <span id="display-availability"></span></p>
+                <p><strong>Training Status:</strong> 10-15 Days Training Assigned</p>
+                <p><strong>Next Step:</strong> Complete training to start working!</p>
+            </div>
+            <div id="training-guide" class="display-box" style="display: none;">
+                <h3>10-15 Day Training Plan</h3>
+                <p>Based on your skill (<span id="training-skill"></span>):</p>
+                <ul>
+                    <li>Day 1-5: Basic Skills & Customer Interaction</li>
+                    <li>Day 6-10: Practical Training</li>
+                    <li>Day 11-15: Time Management & Final Assessment</li>
+                </ul>
+            </div>
+            <ul class="feature-list">
+                <li>Easy Registration</li>
+                <li>Training Module</li>
+                <li>Job Finder</li>
+                <li>Daily Attendance</li>
+                <li>Earning Tracker</li>
+                <li>Referral Bonus</li>
+                <li>Wallet System</li>
+                <li>Emergency Leave Request</li>
+                <li>Experience-Based Job Matching</li>
+            </ul>
+        </div>
+
+        <!-- Available Jobs Section -->
+        <div class="section">
+            <h2>Available Jobs</h2>
+            <div id="job-list" class="display-box">
+                <p>Jobs posted by companies will appear here.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; 2025 QuickCrew. All Rights Reserved.</p>
+        <p>Contact Us: <a href="mailto:kamlesh.mypersonal@gmail.com">kamlesh.mypersonal@gmail.com</a></p>
+        <p>
+            <a href="https://facebook.com/quickcrew" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com/quickcrew" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/quickcrew" target="_blank"><i class="fab fa-twitter"></i></a>
+        </p>
+    </div>
+
+    <script>
+        // Company Form Submission
+        document.getElementById('company-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const company = document.getElementById('company-name').value;
+            const staffType = document.getElementById('staff-type').value;
+            const staffCount = document.getElementById('staff-count').value;
+            const location = document.getElementById('location').value;
+            const duration = document.getElementById('duration').value;
+            const salary = document.getElementById('salary').value;
+            const shift = document.getElementById('shift').value;
+            const desc = document.getElementById('job-desc').value;
+
+            document.getElementById('display-company').textContent = company;
+            document.getElementById('display-staff-type').textContent = staffType;
+            document.getElementById('display-staff-count').textContent = staffCount;
+            document.getElementById('display-location').textContent = location;
+            document.getElementById('display-duration').textContent = duration;
+            document.getElementById('display-salary').textContent = salary;
+            document.getElementById('display-shift').textContent = shift;
+            document.getElementById('display-desc').textContent = desc;
+            document.getElementById('company-display').style.display = 'block';
+
+            document.getElementById('job-list').innerHTML = `
+                <p><strong>${staffType}</strong> needed at ${company} - ${desc} 
+                (${staffCount} required, Location: ${location}, ₹${salary}/day, ${shift} Shift)</p>`;
+            this.reset();
+        });
+
+        // Staff Form Submission
+        document.getElementById('staff-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('staff-name').value;
+            const skill = document.getElementById('skill').value;
+            const experience = document.getElementById('experience').value;
+            const location = document.getElementById('staff-location').value;
+            const availability = document.getElementById('availability').value;
+
+            document.getElementById('display-staff-name').textContent = name;
+            document.getElementById('display-skill').textContent = skill;
+            document.getElementById('display-experience').textContent = experience;
+            document.getElementById('display-staff-location').textContent = location;
+            document.getElementById('display-availability').textContent = availability;
+            document.getElementById('staff-display').style.display = 'block';
+
+            document.getElementById('training-skill').textContent = skill;
+            document.getElementById('training-guide').style.display = 'block';
+            this.reset();
+        });
+
+        // Replace Staff Function
+        function replaceStaff() {
+            alert('Staff replacement request sent! New staff will be assigned tomorrow.');
+        }
+    </script>
+</body>
+</html>
